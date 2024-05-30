@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+	 /* Pretendard 폰트 정의 */
+  @font-face {
+    font-family: 'Pretendard-';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+ @font-face {
+        font-family: 'Pretendard';
+        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+        font-weight: 300; 
+        font-style: normal;
+    }
+body, h1, h2, h3, p, ul, li{margin: 0; padding: 0}
+ body {background-color: black; }
+
+.wrap{display: flex;
+	margin: 0 auto;
+	justify-content: center;
+align-items: center;
+height: 92px}
+
+.menu{display: flex;
+	justify-content: center;
+		height: 92px;
+		margin:auto;
+		align-items: center;
+		gap: 100px;
+		flex-shrink: 0;
+		position: fixed;
+		z-index: 100}
+
+.menu li {list-style-type: none;}
+
+.menu li a {color: #727274;
+		font-family: Pretendard;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	text-decoration: none;}
+
+.menu li a:hover{color: white;}
+
+.title{color: #FFF;
+font-family: Pretendard;
+font-size: 64px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+position: absolute;
+top: 200px;
+left: 100px}
+
+.sub{color: #D3D3D3;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+position: absolute;
+top: 300px;
+left: 100px}
+
+.intro{max-width: 1572px;position: relative; justify-content: center; display: block; margin: 0 auto;}
+
+.Physical1{top: 1230px}
+.Physical1t{color: #171718;
+	text-align: center;
+	font-family: Pretendard;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: 150%;
+	position: absolute;
+            top:1382px;
+            left:379px;}
+
+.card{width: 1528px;
+height: 576px;
+flex-shrink: 0;
+border-radius: 30px;
+background: #171718;
+position: absolute;
+top: 1614px;
+left: 100px}
+.cardvd{border-radius: 20px;
+width: 446px;
+height: 467px;
+position: relative;
+left: 63px;
+top: 55px}
+
+.피지컬{color: #FFF;
+text-align: center;
+font-family: Pretendard;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+position: absolute;
+top: 134px;
+left: 592px}
+
+.피지컬영문{color: #A2A2A2;
+text-align: center;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+position: absolute;
+top: 193px;
+left: 592px}
+
+.피지컬본문{color: #FFF;
+font-family: Pretendard;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 33px */
+position: absolute;
+top: 283px;
+left: 592px}
+.피지컬강조{color: #E00501;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%;}
+.피지컬본문2{color: #FFF;
+font-family: Pretendard;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 33px */
+position: absolute;
+top: 337px;
+left: 592px}
+.피지컬본문3{color: #FFF;
+font-family: Pretendard;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 33px */
+position: absolute;
+top: 416px;
+left: 592px}
+
+.choise1{color: #FFF;
+text-align: center;
+font-family: Pretendard;
+font-size: 64px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+position: absolute;
+top: 2592px;
+left: 100px}
+.choise1-2{color: #A2A2A2;
+text-align: center;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+position: absolute;
+top: 2695px;
+left: 100px}
+
+.mission0{display: flex;
+width: 1378px;
+align-items: flex-start;
+align-content: flex-start;
+gap: 34px 30px;
+flex-wrap: wrap;
+position: absolute;
+top: 2873px;
+left: 175px}
+
+
+
+.mission1{width: 674px;
+height: 448px;
+flex-shrink: 0;
+background-image: url("https://s3-alpha-sig.figma.com/img/9b4b/b204/41e4d50181f89b90cf5ac7c5c55d28d7?Expires=1717372800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fDHuPi98IHczzawHW8EcY~b6kJO8TSQWrR5M39wz2XF5Nx3rzqtfCXwtt1yrplSm1xHPPhwyGkKNiBAayrkEPuusoRg03Tsd3VTlcKcxqLiBDR7gMXgKra2XFDHDvf9HaX-83TDy-HDS5XjbNs9e3awrnNBkfgLPP96qrSqZjU-IG9sU09znss4GrRMaK-~cfRub-k12CEkJFYVkhfWfEvcJ6JiUFu1HLj6QomW3x3BdNbBxx6WeeZ~-qQWS5V16RLzk4u-91Nl1I8oBQmaVrkxonEsrHEuNYwahwZPWhs0baxc5~TagNIy9WxrIFD70gM1-nCLlkktdc7HiBzxFKA__");
+background-position: center;
+background-size: cover;
+color: white;
+border-radius: 20px;
+filter: brightness(0.5);
+}
+.mission1:hover{ filter: brightness(1);}
+.mission1-2{
+text-align: center;
+font-family: Pretendard;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+position: relative;
+top: 197px;
+margin: 0 auto;}
+
+.mission1-3{
+text-align: center;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+position: relative;
+top: 163px;
+margin: 0 auto;}
+
+
+.caution{color: #A2A2A2;
+text-align: center;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+position: absolute;
+top: 4329px;
+right: 100px
+}
+
+.last{
+	background: black;
+flex-shrink: 0;
+top: 4358px;
+padding-top:200px ;
+padding-bottom: 200px;
+position: absolute;
+}
+
+</style>
+
+
+<nav class="wrap">
+
+<ul class="menu">
+	<li><a href= "#aaa">About</a></li>
+	<li><a href= "#bbb">Ch.0</a></li>
+	<li><a href= "#ccc">Ch.1</a></li>
+	<li><a href= "#ddd">Ch.2</a></li>
+	<li><a href= "#ddd">Ch.3</a></li>
+	<li><a href= "#ddd">Ch.4</a></li>
+</ul>
+
+</nav>
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+
+
+
+
+<body>
+
+<video class="intro" src="./TORSO_100_i1.mp4" id="intro" autoplay loop muted></video>
+<script type="text/javascript">
+	var video = document.getElementById('intro')
+video.playbackRate = 0.7;
+</script>
+
+<h1 class="title">피지컬:100 시즌 2 언더그라운드 공략집</h1>
+<h1 class="sub">피지컬 100 시즌3를 도전해보고 싶은 모든 이들에게 바치는 시즌 2 기출공략집</h1>
+
+<svg class="Physical1" xmlns="http://www.w3.org/2000/svg" width="1728" height="1086" viewBox="0 0 1728 1086" fill="none">
+  <path d="M91.9684 98.0732C119.908 38.2403 179.968 0 246.003 0L1728 0V1086H0V295.027L91.9684 98.0732Z" fill="white"/>
+  
+</svg>
+<h1 class="Physical1t">피지컬 100 시리즈의 높아지는 인기로<br>
+시즌3 참가를 희망하는 기대를 가득 먹고 탄생했어요!</h1>
+
+<div class="card">
+	<video src="./Untitled.mp4" class="cardvd" id="mini" autoplay loop muted></video>
+	<script type="text/javascript">
+	var video = document.getElementById('mini')
+video.playbackRate = 1.5;
+</script>
+	<h1 class="피지컬">피지컬</h1>
+	<h1 class="피지컬영문">(Physical & Physique)</h1>
+	<h1 class="피지컬본문">좁은 의미에서 육체의 조건을 의미하고, 넓은 의미에서 신체의 능력 즉, 운동 능력을 뜻한다. </h1>
+	<h1 class="피지컬본문2">육체의 조건에는 키, 체중, 근육량 등이 있으며,<br>운동 능력에는 순발력, 속력, 심폐 지구력, 근력, 근지구력 등이 있다.</h1>
+	<h1 class="피지컬본문3">피지컬:100 에서는 이러한 두가지 의미의 “피지컬”로 참가자끼리 대결하여 우승자를 가린다.</h1>
+</div>
+
+<h1 class="choise1">피지컬 100 시즌 3, 아직 고민하고 계세요?</h1>
+<h1 class="choise1-2">시즌 2에 대한 모든걸 담았어요. 미션별 분석집을 통해 철저하게 대비하세요!</h1>
+
+
+<div class="mission0">
+<div class="mission1">
+	<div class="mission1-3">Quest : 0 </div>
+	<div class="mission1-2">질주</div>
+</div>	
+<div class="mission1">
+	<div class="mission1-3">Quest : 1 </div>
+	<div class="mission1-2">1vs1 데스매치</div>
+</div>	
+<div class="mission1">
+	<div class="mission1-3">Quest : 2 </div>
+	<div class="mission1-2">미로 점령전</div>
+</div>	
+<div class="mission1">
+	<div class="mission1-3">Quest : 3-1 </div>
+	<div class="mission1-2">광산- 광차 짐 나르기</div>
+</div>	
+<div class="mission1">
+	<div class="mission1-3">Quest : 3-2 </div>
+	<div class="mission1-2">광산- 공중 짐 나르기</div>
+</div>	
+<div class="mission1">
+	<div class="mission1-3">Quest : 4 </div>
+	<div class="mission1-2">롤러 레이스</div>
+</div>	
+</div>
+
+<h1 class="caution">*스포일러 방지를 위해 파이널 미션은 담고 있지 않아요. 방송을 통해 확인해 주세요!</h1>
+
+<div class="last">footer</div>
+
+</body>
+
+
+</html>
