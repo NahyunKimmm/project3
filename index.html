@@ -76,25 +76,41 @@ height: 92px}
 
 .menu li a:hover{color: white;}
 
-.title{color: #FFF;
-font-family: Pretendard;
-font-size: 64px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-position: absolute;
-top: 200px;
-left: 100px}
-
-.sub{color: #D3D3D3;
-font-family: Pretendard;
-font-size: 24px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-position: absolute;
-top: 300px;
-left: 100px}
+    .title, .sub {
+            position: absolute;
+            opacity: 0; /* 초기 상태에서 보이지 않도록 설정 */
+        }
+        .title {
+            color: #FFF;
+            font-family: Pretendard;
+            font-size: 64px;
+            font-style: normal;
+            font-weight: 700;
+            top: 200px;
+            left: 100px;
+        }
+        .sub {
+            color: #D3D3D3;
+            font-family: Pretendard;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            top: 300px;
+            left: 100px;
+        }
+        @keyframes fadeInFromLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .animate {
+            animation: fadeInFromLeft 1s ease forwards; /* 애니메이션을 1초 동안 진행하고 끝난 후에 마지막 상태를 유지 */
+        }
 
 .intro{max-width: 1572px;position: relative; justify-content: center; display: block; margin: 0 auto;}
 
@@ -117,7 +133,25 @@ border-radius: 30px;
 background: #171718;
 position: absolute;
 top: 1614px;
-left: 100px}
+left: 100px;
+opacity: 0; /* 초기 상태에서 보이지 않도록 설정 */
+            transition: opacity 0.5s ease;}
+
+  @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .floating {
+            animation: floating 3s infinite ease-in-out;
+        }
+
 .cardvd{border-radius: 20px;
 width: 446px;
 height: 467px;
@@ -225,7 +259,9 @@ border-radius: 20px;
 filter: brightness(0.5);
 text-decoration: none;
 }
-.mission1:hover{ filter: brightness(1);}
+.mission1:hover{ filter: brightness(1);
+ transform: translateY(-8px); }
+
 .mission1-2{
 text-align: center;
 font-family: Pretendard;
@@ -305,8 +341,8 @@ position: absolute;
 video.playbackRate = 0.7;
 </script>
 
-<h1 class="title">피지컬:100 시즌 2 언더그라운드 공략집</h1>
-<h1 class="sub">피지컬 100 시즌3를 도전해보고 싶은 모든 이들에게 바치는 시즌 2 기출공략집</h1>
+<h1 class="title animate" id="title">피지컬:100 시즌 2 언더그라운드 공략집</h1>
+<h1 class="sub animate" id="sub">피지컬 100 시즌3를 도전해보고 싶은 모든 이들에게 바치는 시즌 2 기출공략집</h1>
 
 <svg class="Physical1" xmlns="http://www.w3.org/2000/svg" width="1728" height="1086" viewBox="0 0 1728 1086" fill="none">
   <path d="M91.9684 98.0732C119.908 38.2403 179.968 0 246.003 0L1728 0V1086H0V295.027L91.9684 98.0732Z" fill="white"/>
@@ -315,7 +351,7 @@ video.playbackRate = 0.7;
 <h1 class="Physical1t">피지컬 100 시리즈의 높아지는 인기로<br>
 시즌3 참가를 희망하는 기대를 가득 먹고 탄생했어요!</h1>
 
-<div class="card">
+<div class="card" id="floatingCard">
 	<video src="./Untitled.mp4" class="cardvd" id="mini" autoplay loop muted></video>
 	<script type="text/javascript">
 	var video = document.getElementById('mini')
@@ -362,6 +398,41 @@ video.playbackRate = 1.5;
 <h1 class="caution">*스포일러 방지를 위해 파이널 미션은 담고 있지 않아요. 방송을 통해 확인해 주세요!</h1>
 
 <div class="last">footer</div>
+
+
+ <script>
+        window.addEventListener('load', () => {
+            const card = document.getElementById('floatingCard');
+
+            // 스크롤 이벤트 리스너 추가
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY + window.innerHeight;
+                const cardPosition = card.getBoundingClientRect().top + window.scrollY + card.clientHeight / 2;
+
+                // 스크롤 위치가 카드 위치에 도달하면
+                if (scrollPosition > cardPosition) {
+                    card.classList.add('floating');
+                    card.style.opacity = 1; // 카드가 보이도록 설정
+                } else {
+                    card.classList.remove('floating');
+                    card.style.opacity = 0; // 카드가 보이지 않도록 설정
+                }
+            });
+        });
+    </script>
+
+    <script>
+        window.addEventListener('load', () => {
+            const title = document.getElementById('title');
+            const sub = document.getElementById('sub');
+
+            // 애니메이션 클래스 추가
+            setTimeout(() => {
+                title.classList.add('animate');
+                sub.classList.add('animate');
+            }, 500); // 0.5초 후에 애니메이션 시작
+        });
+    </script>
 
 </body>
 
